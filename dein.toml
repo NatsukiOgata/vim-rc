@@ -51,6 +51,40 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'mattn/webapi-vim'
+[[plugins]]
+repo = 'mattn/wwwrenderer-vim'
+
+[[plugins]]
+repo = 'thinca/vim-ref'
+hook_add = '''
+"	let s:browser = 'C:\PROGRA~2\LYNXFO~1\lynx.exe'
+"	let s:config  = 'C:\PROGRA~2\LYNXFO~1\lynx.cfg'
+"
+"	let g:ref_source_webdict_cmd = s:browser . ' -cfg=' . s:config . ' -dump -nonumber %s'
+"	let g:ref_source_webdict_cmd = 'lynx -dump -nonumbers %s'
+	let g:ref_source_webdict_cmd = '=wwwrenderer#render("%s")'
+	let g:ref_source_webdict_use_cache = 1
+
+	let g:ref_source_webdict_sites = {
+\		'je': {
+\			'url': 'http://dictionary.infoseek.ne.jp/jeword/%s',
+\		},
+\		'ej': {
+\			'url': 'http://dictionary.infoseek.ne.jp/ejword/%s',
+\		},
+\	}
+
+	function! g:ref_source_webdict_sites.je.filter(output)
+		return join(split(a:output, "\n")[25 :], "\n")
+	endfunction
+
+	function! g:ref_source_webdict_sites.ej.filter(output)
+		return join(split(a:output, "\n")[25 :], "\n")
+	endfunction
+'''
+
+[[plugins]]
 repo = 'airblade/vim-rooter'
 hook_add = '''
 	let g:rooter_use_lcd = 1
