@@ -1,0 +1,95 @@
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]]
+repo = 'Shougo/unite.vim'
+hook_add = '''
+	let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+	call unite#custom#profile('default', 'context', {
+\		'start_insert': 1,
+\	})
+	call unite#custom#default_action('directory', 'vimfiler')
+'''
+
+# Python3 に依存
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_add = '''
+	call denite#custom#option('default', 'direction', 'top')
+	" 上下移動を<C-N>, <C-P>
+	call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
+	call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
+	call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
+	call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
+	" タブオープンを`<C-T>`
+	call denite#custom#map('insert', '<C-T>', '<denite:do_action:tabopen>')
+	" 部分一致(スペースで複数可)
+	call denite#custom#source('file_mru', 'matchers', ['matcher_substring'])
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/vimfiler.vim'
+hook_add = '''
+	call vimfiler#custom#profile('default', 'context', {
+\		'auto_cd': 1,
+\		'safe': 0,
+\		'fnamewidth': 74,
+\		'sort_type': 'Time',
+\	})
+'''
+
+[[plugins]]
+repo = 'Shougo/vimshell.vim'
+
+[[plugins]]
+repo = 'thinca/vim-singleton'
+hook_source = '''
+	call singleton#enable()
+'''
+
+[[plugins]]
+repo = 'airblade/vim-rooter'
+hook_add = '''
+	let g:rooter_use_lcd = 1
+	let g:rooter_patterns = ['GTAGS', '.svn/', 'ProgramingArea/']
+'''
+
+[[plugins]]
+repo = 'fuenor/qfixhowm'
+hook_add = '''
+	let g:QFix_Height = 6
+	let g:QFix_PreviewHeight = 24
+	let g:QFixHowm_Key = ','
+	let g:QFixHowm_KeyB = 'h'
+	let g:QFixHowm_CalendarWinCmd = 'vertical botright'
+'''
+
+[[plugins]]
+repo = 'hewes/unite-gtags'
+
+[[plugins]]
+repo = 'itchyny/landscape.vim'
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+
+[[plugins]]
+repo = 'kana/vim-altr.git'
+
+[[plugins]]
+repo = 'vim-scripts/Wombat'
+
+[[plugins]]
+repo = 'vim-scripts/Wombat256.vim'
+
+[[plugins]]
+repo = 'vim-scripts/DirDiff.vim'
+
+[[plugins]]
+repo = 'vim-scripts/copypath.vim'
+
+[[plugins]]
+repo = 'vim-scripts/BlockDiff'

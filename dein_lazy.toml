@@ -1,0 +1,31 @@
+[[plugins]]
+repo = 'tyru/eskk.vim'
+on_i = 1
+hook_source = '''
+	let g:eskk#dictionary = {
+\		'path': '~/.vim/dict/SKK-VIM-JISYO.txt',
+\		'sorted': 0,
+\		'encoding': 'sjis',
+\	}
+	let g:eskk#large_dictionary = {
+\		'path': $ALLUSERSPROFILE . '/skk/skki1_5/SKK-JISYO.L',
+\		'sorted': 1,
+\		'encoding': 'euc-jp',
+\	}
+	let g:eskk#egg_like_newline = 1
+'''
+
+[[plugins]]
+repo = 'haya14busa/vim-migemo'
+on_i = 1
+hook_source = '''
+	set migemodict=C:\bin\cmigemo\dict\cp932\migemo-dict
+'''
+
+[[plugins]]
+repo = 'Shougo/neocomplcache'
+on_i = 1
+hook_source = '''
+	let g:acp_enableAtStartup = 0
+	let g:neocomplcache_enable_at_startup = 1
+'''
