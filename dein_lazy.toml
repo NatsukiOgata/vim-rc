@@ -5,7 +5,7 @@ hook_source = '''
 	let g:eskk#dictionary = {
 \		'path': '~/.vim/dict/SKK-VIM-JISYO.txt',
 \		'sorted': 0,
-\		'encoding': 'sjis',
+\		'encoding': 'utf-8',
 \	}
 	let g:eskk#large_dictionary = {
 \		'path': $ALLUSERSPROFILE . '/skk/skki1_5/SKK-JISYO.L',
