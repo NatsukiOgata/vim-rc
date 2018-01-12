@@ -21,7 +21,7 @@ hook_add = '''
 	call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
 	call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
 	call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
-	" タブオープンを`<C-T>`
+	" タブオープンを<C-T>
 	call denite#custom#map('insert', '<C-T>', '<denite:do_action:tabopen>')
 	" 部分一致(スペースで複数可)
 	call denite#custom#source('file_mru', 'matchers', ['matcher_substring'])
@@ -105,6 +105,9 @@ hook_add = '''
 repo = 'hewes/unite-gtags'
 
 [[plugins]]
+repo = 'ujihisa/unite-colorscheme'
+
+[[plugins]]
 repo = 'itchyny/landscape.vim'
 
 [[plugins]]
@@ -114,10 +117,7 @@ repo = 'itchyny/lightline.vim'
 repo = 'kana/vim-altr.git'
 
 [[plugins]]
-repo = 'vim-scripts/Wombat'
-
-[[plugins]]
-repo = 'vim-scripts/Wombat256.vim'
+repo = 'sheerun/vim-wombat-scheme'
 
 [[plugins]]
 repo = 'vim-scripts/DirDiff.vim'
