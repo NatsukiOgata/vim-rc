@@ -19,7 +19,7 @@ hook_source = '''
 repo = 'haya14busa/vim-migemo'
 on_i = 1
 hook_source = '''
-	set migemodict=C:\bin\cmigemo\dict\cp932\migemo-dict
+	let g:migemodict = 'C:\bin\cmigemo\dict\utf-8\migemo-dict'
 '''
 
 [[plugins]]

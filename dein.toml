@@ -87,8 +87,8 @@ hook_add = '''
 [[plugins]]
 repo = 'airblade/vim-rooter'
 hook_add = '''
-	let g:rooter_use_lcd = 1
-	let g:rooter_patterns = ['GTAGS', '.svn/', 'ProgramingArea/']
+	let g:rooter_use_lcd = 0
+	let g:rooter_patterns = ['GTAGS', '.git/', '.svn/', 'ProgramingArea/']
 '''
 
 [[plugins]]
@@ -118,6 +118,9 @@ repo = 'kana/vim-altr.git'
 
 [[plugins]]
 repo = 'sheerun/vim-wombat-scheme'
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'vim-scripts/DirDiff.vim'
