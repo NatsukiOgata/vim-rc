@@ -99,6 +99,7 @@ hook_add = '''
 	let g:QFixHowm_Key = ','
 	let g:QFixHowm_KeyB = 'h'
 	let g:QFixHowm_CalendarWinCmd = 'vertical botright'
+"	let g:QFixHowm_ForceEncoding = 0
 '''
 
 [[plugins]]
