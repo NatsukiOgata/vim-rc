@@ -38,9 +38,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/vimshell.vim'
-
-[[plugins]]
 repo = 'thinca/vim-singleton'
 hook_source = '''
 	call singleton#enable()
