@@ -7,19 +7,19 @@ hook_add = '''
 	call unite#custom#default_action('directory', 'vimfiler')
 '''
 
-# Python3 ‚ÉˆË‘¶
+# Python3 ã«ä¾å­˜
 [[plugins]]
 repo = 'Shougo/denite.nvim'
 hook_add = '''
 	call denite#custom#option('default', 'direction', 'top')
-	" ã‰ºˆÚ“®‚ğ<C-N>, <C-P>
+	" ä¸Šä¸‹ç§»å‹•ã‚’<C-N>, <C-P>
 	call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
 	call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
 	call denite#custom#map('insert', '<C-N>', '<denite:move_to_next_line>')
 	call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
-	" ƒ^ƒuƒI[ƒvƒ“‚ğ<C-T>
+	" ã‚¿ãƒ–ã‚ªãƒ¼ãƒ—ãƒ³ã‚’<C-T>
 	call denite#custom#map('insert', '<C-T>', '<denite:do_action:tabopen>')
-	" •”•ªˆê’v(ƒXƒy[ƒX‚Å•¡”‰Â)
+	" éƒ¨åˆ†ä¸€è‡´(ã‚¹ãƒšãƒ¼ã‚¹ã§è¤‡æ•°å¯)
 	call denite#custom#source('file_mru', 'matchers', ['matcher_substring'])
 '''
 
