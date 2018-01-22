@@ -90,9 +90,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'hewes/unite-gtags'
-
-[[plugins]]
 repo = 'ujihisa/unite-colorscheme'
 
 [[plugins]]
