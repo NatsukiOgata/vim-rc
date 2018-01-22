@@ -100,6 +100,19 @@ repo = 'itchyny/landscape.vim'
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+hook_add = '''
+	let g:lightline = {
+\		'active': {
+\			'left': [
+\				['mode', 'paste'],
+\				['readonly', 'filename', 'modified', 'ale'],
+\			]
+\		},
+\		'component_function': {
+\			'ale': 'ALEGetStatusLine'
+\		}
+\	}
+'''
 
 [[plugins]]
 repo = 'kana/vim-altr.git'
