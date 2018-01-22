@@ -32,6 +32,10 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/neomru.vim'
+on_source = ['unite.vim', 'denite.nvim']
+
+[[plugins]]
 repo = 'hewes/unite-gtags'
 on_path = '.*'
 hook_source = '''
@@ -60,3 +64,23 @@ hook_post_source = '''
 	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 	nmap <silent> <C-j> <Plug>(ale_next_wrap)
 '''
+
+[[plugins]]
+repo = 'kana/vim-altr'
+on_cmd = ['A']
+hook_source = '''
+	" ヘッダファイルとソースファイルを切り替える
+	command! A call altr#forward()
+'''
+
+[[plugins]]
+repo = 'vim-scripts/DirDiff.vim'
+on_cmd = ['DirDiff']
+
+[[plugins]]
+repo = 'vim-scripts/copypath.vim'
+on_cmd = ['CopyFileName', 'CopyPath']
+
+[[plugins]]
+repo = 'vim-scripts/BlockDiff'
+on_cmd = ['BlockDiff1', 'BlockDiff2']

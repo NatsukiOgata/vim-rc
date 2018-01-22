@@ -55,9 +55,6 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-
-[[plugins]]
 repo = 'Shougo/vimfiler.vim'
 hook_add = '''
 	call vimfiler#custom#profile('default', 'context', {
@@ -153,23 +150,7 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'kana/vim-altr.git'
-hook_add = '''
-	" ヘッダファイルとソースファイルを切り替える
-	command! A call altr#forward()
-'''
-
-[[plugins]]
 repo = 'sheerun/vim-wombat-scheme'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
-
-[[plugins]]
-repo = 'vim-scripts/DirDiff.vim'
-
-[[plugins]]
-repo = 'vim-scripts/copypath.vim'
-
-[[plugins]]
-repo = 'vim-scripts/BlockDiff'
