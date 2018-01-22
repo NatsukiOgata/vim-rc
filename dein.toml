@@ -5,6 +5,23 @@ repo = 'Shougo/dein.vim'
 repo = 'Shougo/unite.vim'
 hook_add = '''
 	call unite#custom#default_action('directory', 'vimfiler')
+
+	nnoremap [unite] :Unite
+	nmap ,u [unite]
+	" バッファ一覧
+	nnoremap <silent> [unite]b :<C-u>Unite buffer<CR>
+	" ファイル一覧
+	nnoremap <silent> [unite]f :<C-u>Unite file_rec<CR>
+	" ディレクトリ一覧
+	nnoremap <silent> [unite]s :<C-u>Unite directory<CR>
+	" bookmark
+	nnoremap <silent> [unite]j :<C-u>Unite bookmark<CR>
+	" 最近使用したファイル一覧(ファイル・ディレクトリ)
+	nnoremap <silent> [unite]m :<C-u>Unite file_mru directory_mru<CR>
+	" 最近使用したファイル一覧(ディレクトリ・ファイル)
+	nnoremap <silent> [unite]d :<C-u>Unite directory_mru file_mru<CR>
+	" カラースキーマ(プレビュー)
+	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
 '''
 
 # Python3 に依存
@@ -21,6 +38,20 @@ hook_add = '''
 	call denite#custom#map('insert', '<C-T>', '<denite:do_action:tabopen>')
 	" 部分一致(スペースで複数可)
 	call denite#custom#source('file_mru', 'matchers', ['matcher_substring'])
+
+	nnoremap [denite] :Denite
+	nmap ,d [denite]
+	" ファイル一覧
+	nnoremap <silent> ,fr :<C-u>Denite file_rec<CR>
+	" ディレクトリ一覧
+	nnoremap <silent> ,dr :<C-u>Denite directory_rec<CR>
+	" 最近使用したファイル一覧(ファイル・ディレクトリ)
+	nnoremap <silent> ,fm :<C-u>Denite file_mru directory_mru<CR>
+	" 最近使用したファイル一覧(ディレクトリ・ファイル)
+	nnoremap <silent> ,dm :<C-u>Denite directory_mru file_mru<CR>
+	" grep
+	nnoremap <silent> ,gr :<C-u>Denite grep -auto-preview<CR>
+	nnoremap <silent> ,gc :<C-u>DeniteCursorWord grep -auto-preview<CR>
 '''
 
 [[plugins]]
@@ -35,6 +66,13 @@ hook_add = '''
 \		'fnamewidth': 74,
 \		'sort_type': 'Time',
 \	})
+
+	nnoremap [vimfiler] :VimFiler
+	nmap ,f [vimfiler]
+	" VimFiler(バッファディレクトリ)
+	nnoremap <silent> [vimfiler]d :<C-u>VimFilerBufferDir<CR>
+	" VimFiler(カレントディレクトリ)
+	nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
 '''
 
 [[plugins]]
@@ -70,6 +108,9 @@ hook_add = '''
 	function! g:ref_source_webdict_sites.ej.filter(output)
 		return join(split(a:output, "\n")[25 :], "\n")
 	endfunction
+
+	" 辞書(Webを使用)
+	nnoremap ,dw :<C-u>Ref webdict 
 '''
 
 [[plugins]]
@@ -113,6 +154,10 @@ hook_add = '''
 
 [[plugins]]
 repo = 'kana/vim-altr.git'
+hook_add = '''
+	" ヘッダファイルとソースファイルを切り替える
+	command! A call altr#forward()
+'''
 
 [[plugins]]
 repo = 'sheerun/vim-wombat-scheme'
