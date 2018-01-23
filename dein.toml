@@ -83,3 +83,16 @@ repo = 'sheerun/vim-wombat-scheme'
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+[[plugins]]
+repo = 'rhysd/neovim-component'
+[[plugins]]
+repo = 'rhysd/nyaovim-markdown-preview'
+[[plugins]]
+repo = 'rhysd/nyaovim-popup-tooltip'
+hook_add = '''
+	nmap <silent> ,gi <Plug>(nyaovim-popup-tooltip-open)
+	vmap <silent> ,gi <Plug>(nyaovim-popup-tooltip-open)
+'''
+[[plugins]]
+repo = 'rhysd/nyaovim-mini-browser'
