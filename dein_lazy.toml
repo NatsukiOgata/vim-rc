@@ -43,7 +43,7 @@ hook_add = '''
 	nnoremap <silent> ,gc :<C-u>DeniteCursorWord grep -auto-preview<CR>
 '''
 hook_post_source = '''
-	call denite#custom#option('default', 'direction', 'top')
+	call denite#custom#option('default', 'direction', 'dynamictop')
 	" 上下移動を<C-N>, <C-P>
 	call denite#custom#map('normal', '<C-N>', '<denite:move_to_next_line>')
 	call denite#custom#map('normal', '<C-P>', '<denite:move_to_previous_line>')
