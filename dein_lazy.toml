@@ -122,8 +122,8 @@ hook_source = '''
 	" cscope_maps.vim like
 	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>s :<C-u>Unite gtags/context -immediately<CR>
 	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>g :<C-u>Unite gtags/def -immediately<CR>
-	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>c :<C-u>Unite gtags/ref<CR>
-	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>e :<C-u>Unite gtags/grep<CR>
+	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>c :<C-u>Unite gtags/ref -auto-preview<CR>
+	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>e :<C-u>Unite gtags/grep -auto-preview<CR>
 '''
 
 [[plugins]]
