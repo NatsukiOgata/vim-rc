@@ -7,6 +7,12 @@ hook_source = '''
 	call singleton#enable()
 '''
 
+#[[plugins]]
+#repo = 'junegunn/fzf.vim'
+
+#[[plugins]]
+#repo = 'mattn/gof'
+
 [[plugins]]
 repo = 'mattn/webapi-vim'
 [[plugins]]
