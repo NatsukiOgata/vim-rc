@@ -102,6 +102,9 @@ repo = 'sheerun/vim-wombat-scheme'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'cohama/agit.vim'
+
+[[plugins]]
 repo = 'rhysd/neovim-component'
 [[plugins]]
 repo = 'rhysd/nyaovim-markdown-preview'
