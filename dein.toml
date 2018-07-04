@@ -63,6 +63,7 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'osyo-manga/vim-over'
 
 [[plugins]]
 repo = 'ujihisa/unite-colorscheme'

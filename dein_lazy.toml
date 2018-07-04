@@ -102,6 +102,7 @@ hook_source = '''
 	let g:EasyMotion_smartcase = 1
 '''
 
+[[plugins]]
 repo = 'haya14busa/vim-migemo'
 if   = '''! has('nvim')'''
 on_i = 1
