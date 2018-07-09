@@ -32,8 +32,9 @@ hook_add = '''
 	" 最近使用したファイル一覧(ファイル・ディレクトリ)
 	nnoremap <silent> ,fm :<C-u>Denite file_mru directory_mru<CR>
 	" grep
-	nnoremap <silent> ,gr :<C-u>Denite grep -auto-preview<CR>
-	nnoremap <silent> ,gc :<C-u>DeniteCursorWord grep -auto-preview<CR>
+	nnoremap <silent> ,gr :<C-u>Denite grep -auto-preview -buffer-name=denite-grep<CR>
+	nnoremap <silent> ,gc :<C-u>DeniteCursorWord grep -auto-preview -buffer-name=denite-grep<CR>
+	nnoremap <silent> ,rg :<C-u>Denite -resume -buffer-name=denite-grep<CR>
 '''
 hook_post_source = '''
 	call denite#custom#option('default', 'direction', 'dynamictop')
@@ -44,6 +45,9 @@ hook_post_source = '''
 	call denite#custom#map('insert', '<C-P>', '<denite:move_to_previous_line>')
 	" タブオープンを<C-T>
 	call denite#custom#map('insert', '<C-T>', '<denite:do_action:tabopen>')
+	" For ripgrep
+	" Note: It is slower than ag
+	call denite#custom#var('file_rec', 'command', ['rg', '--files', '--glob', '!.git'])
 	" 部分一致(スペースで複数可)
 	call denite#custom#source('file_mru', 'matchers', ['matcher_substring'])
 	" Ripgrep command on grep source
