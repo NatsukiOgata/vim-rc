@@ -62,16 +62,16 @@ hook_add = '''
 	let g:QFixHowm_CalendarWinCmd = 'vertical botright'
 '''
 
-[[plugins]]
-repo = 'osyo-manga/vim-over'
-hook_add = '''
-	" 全体置換
-	nnoremap <silent> ,rep :OverCommandLine<CR>%s/
-	" 選択範囲置換
-	vnoremap <silent> ,rep :OverCommandLine<CR>s/
-	" カーソルしたの単語置換
-	nnoremap rep :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
-'''
+#[[plugins]]
+#repo = 'osyo-manga/vim-over'
+#hook_add = '''
+#	" 全体置換
+#	nnoremap <silent> ,rep :OverCommandLine<CR>%s/
+#	" 選択範囲置換
+#	vnoremap <silent> ,rep :OverCommandLine<CR>s/
+#	" カーソルしたの単語置換
+#	nnoremap rep :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
+#'''
 
 [[plugins]]
 repo = 'ujihisa/unite-colorscheme'
