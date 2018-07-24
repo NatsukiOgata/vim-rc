@@ -7,21 +7,6 @@ hook_source = '''
 	call singleton#enable()
 '''
 
-[[plugins]]
-repo = 'junegunn/fzf'
-build = './install --bin'
-merged = '0'
-
-[[plugins]]
-repo = 'junegunn/fzf.vim'
-depends = 'fzf'
-hook_add = '''
-	" ファイル一覧
-	nnoremap <silent> ,fr :<C-u>Files<CR>
-	" 最近使用したファイル一覧
-	nnoremap <silent> ,fm :<C-u>History<CR>
-'''
-
 #[[plugins]]
 #repo = 'mattn/gof'
 

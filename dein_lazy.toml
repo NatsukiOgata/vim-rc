@@ -79,6 +79,24 @@ hook_post_source = '''
 '''
 
 [[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
+on_cmd = ['Files', 'History', 'GFiles']
+hook_add = '''
+	" ファイル一覧
+	nnoremap <silent> ,fr :<C-u>Files<CR>
+	" 最近使用したファイル一覧
+	nnoremap <silent> ,fm :<C-u>History<CR>
+	" ファイル一覧(Git)
+	nnoremap <silent> ,gfr :<C-u>GFiles<CR>
+'''
+
+[[plugins]]
 repo = 'tyru/eskk.vim'
 on_i = 1
 hook_source = '''
