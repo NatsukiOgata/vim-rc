@@ -7,8 +7,14 @@ hook_source = '''
 	call singleton#enable()
 '''
 
-#[[plugins]]
-#repo = 'junegunn/fzf.vim'
+[[plugins]]
+repo = 'junegunn/fzf'
+build = './install --bin'
+merged = '0'
+
+[[plugins]]
+repo = 'junegunn/fzf.vim'
+depends = 'fzf'
 
 #[[plugins]]
 #repo = 'mattn/gof'
