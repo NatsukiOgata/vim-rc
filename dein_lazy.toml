@@ -95,6 +95,9 @@ hook_add = '''
 	" ファイル一覧(Git)
 	nnoremap <silent> ,gfr :<C-u>GFiles<CR>
 '''
+hook_source = '''
+	let g:fzf_layout = { 'up': '~40%' }
+'''
 
 [[plugins]]
 repo = 'tyru/eskk.vim'
