@@ -57,6 +57,17 @@ hook_add = '''
 	let g:QFixHowm_Key = ','
 	let g:QFixHowm_KeyB = 'h'
 	let g:QFixHowm_CalendarWinCmd = 'vertical botright'
+	" ripgrepを使う（PATHは通してある前提）
+	let g:mygrepprg='rg'
+	" 実行時のオプションをripgrep用に変更（GNU Grepと同じ出力になるように）
+	let g:MyGrepcmd_useropt='-nH --no-heading --color never'
+	let g:MyGrepcmd_regexp=''
+	let g:MyGrepcmd_regexp_ignore='-i'
+	let g:MyGrepcmd_fix='-F'
+	let g:MyGrepcmd_fix_ignore='-F -i'
+	let g:MyGrepcmd_recursive=''
+	" gipgrepにファイルパターンとして「*」「*.*」を渡したらエラーになったのでその対策
+	let g:MyGrep_GrepFilePattern='.'
 '''
 
 #[[plugins]]
