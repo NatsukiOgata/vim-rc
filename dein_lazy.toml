@@ -96,7 +96,7 @@ hook_add = '''
 	" 最近使用したファイル一覧
 	nnoremap <silent> ,fm :<C-u>History<CR>
 	" ファイル一覧(Git)
-	nnoremap <silent> ,gfr :<C-u>GFiles<CR>
+	nnoremap <silent> ,fg :<C-u>GFiles<CR>
 '''
 
 [[plugins]]
