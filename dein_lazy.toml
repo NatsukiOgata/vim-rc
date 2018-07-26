@@ -7,7 +7,7 @@ hook_add = '''
 	" バッファ一覧
 	nnoremap <silent> ,bl :<C-u>Unite buffer<CR>
 	" bookmark
-	nnoremap <silent> ,jb :<C-u>Unite bookmark<CR>
+	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
 	" 最近使用したディレクトリ一覧(ディレクトリ・ファイル)
 	nnoremap <silent> ,dm :<C-u>Unite directory_mru file_mru<CR>
 	" カラースキーマ(プレビュー)
