@@ -7,9 +7,6 @@ hook_source = '''
 	call singleton#enable()
 '''
 
-#[[plugins]]
-#repo = 'mattn/gof'
-
 [[plugins]]
 repo = 'mattn/webapi-vim'
 [[plugins]]
@@ -72,17 +69,6 @@ hook_add = '''
 	" gipgrepにファイルパターンとして「*」「*.*」を渡したらエラーになったのでその対策
 	let g:MyGrep_GrepFilePattern='.'
 '''
-
-#[[plugins]]
-#repo = 'osyo-manga/vim-over'
-#hook_add = '''
-#	" 全体置換
-#	nnoremap <silent> ,rep :OverCommandLine<CR>%s/
-#	" 選択範囲置換
-#	vnoremap <silent> ,rep :OverCommandLine<CR>s/
-#	" カーソルしたの単語置換
-#	nnoremap rep :OverCommandLine<CR>%s/<C-r><C-w>//g<Left><Left>
-#'''
 
 [[plugins]]
 repo = 'ujihisa/unite-colorscheme'
