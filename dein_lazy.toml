@@ -164,10 +164,6 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'Shougo/neomru.vim'
-on_source = ['unite.vim', 'denite.nvim']
-
-[[plugins]]
 repo = 'hewes/unite-gtags'
 on_path = '.*'
 hook_source = '''
