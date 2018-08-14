@@ -58,7 +58,7 @@ hook_post_source = '''
 
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
-on_cmd = ['VimFiler', 'VimFilerBufferDir', 'VimFilerCurrentDir']
+on_cmd = ['VimFiler', 'VimFilerTab', 'VimFilerBufferDir', 'VimFilerCurrentDir']
 hook_add = '''
 	nnoremap [vimfiler] :VimFiler
 	nmap ,f [vimfiler]
@@ -101,13 +101,13 @@ hook_add = '''
 hook_source = '''
 	command! FileMRU :call fzf#run({
 \		'source': 'cat file | tail -n +2',
-\		'sink': 'edit',
+\		'sink': 'tabedit',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
 \	})
 	command! DirectoryMRU :call fzf#run({
 \		'source': 'cat directory | tail -n +2',
-\		'sink': 'VimFiler',
+\		'sink': 'VimFilerTab',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
 \	})
