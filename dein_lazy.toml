@@ -100,13 +100,13 @@ hook_add = '''
 '''
 hook_source = '''
 	command! FileMRU :call fzf#run({
-\		'source': 'cat file | grep /',
+\		'source': 'cat file | tail -n +2',
 \		'sink': 'edit',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
 \	})
 	command! DirectoryMRU :call fzf#run({
-\		'source': 'cat directory | grep /',
+\		'source': 'cat directory | tail -n +2',
 \		'sink': 'VimFiler',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
