@@ -100,13 +100,13 @@ hook_add = '''
 '''
 hook_source = '''
 	command! FileMRU :call fzf#run({
-\		'source': 'cat file | tail -n +2',
+\		'source': 'tail -n +2 file',
 \		'sink': 'tabedit',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
 \	})
 	command! DirectoryMRU :call fzf#run({
-\		'source': 'cat directory | tail -n +2',
+\		'source': 'tail -n +2 directory',
 \		'sink': 'VimFilerTab',
 \		'dir': '~/.cache/neomru',
 \		'down': '40%',
