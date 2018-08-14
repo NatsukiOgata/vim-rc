@@ -99,12 +99,10 @@ hook_add = '''
 	nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
 '''
 hook_source = '''
-	command! FileMRU :call fzf#run({
+	command! FileMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 file',
-\		'sink': 'tabedit',
 \		'dir': '~/.cache/neomru',
-\		'down': '40%',
-\	})
+\	}))
 	command! DirectoryMRU :call fzf#run({
 \		'source': 'tail -n +2 directory',
 \		'sink': 'VimFilerTab',
