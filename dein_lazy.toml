@@ -132,17 +132,9 @@ hook_source = '''
 repo = 'easymotion/vim-easymotion'
 on_map = ['<Plug>(easymotion-']
 hook_add = '''
-	" <Space>f{char} to move to {char}
-	map  <Space>f <Plug>(easymotion-bd-f)
-	nmap <Space>f <Plug>(easymotion-overwin-f)
-	" <Space>s{char}{char} to move to {char}{char}
-	nmap <Space>s <Plug>(easymotion-overwin-f2)
-	" Move to line
-	map  <Space>L <Plug>(easymotion-bd-jk)
-	nmap <Space>L <Plug>(easymotion-overwin-line)
-	" Move to word
-	map  <Space>w <Plug>(easymotion-bd-w)
-	nmap <Space>w <Plug>(easymotion-overwin-w)
+	" f{char} to move to {char}
+	map  f <Plug>(easymotion-bd-f)
+	nmap f <Plug>(easymotion-overwin-f)
 '''
 hook_source = '''
 	" デフォルトのキーマッピングを無効に
