@@ -22,7 +22,7 @@ hook_post_source = '''
 # Python3 に依存
 [[plugins]]
 repo = 'Shougo/denite.nvim'
-if   = '''has('nvim')'''
+if   = 'has("nvim")'
 on_cmd = ['Denite', 'DeniteCursorWord']
 hook_add = '''
 	nnoremap [denite] :Denite
@@ -148,7 +148,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
-if   = '''! has('nvim')'''
+if   = '! has("nvim")'
 on_i = 1
 hook_post_source = '''
 	set migemo
