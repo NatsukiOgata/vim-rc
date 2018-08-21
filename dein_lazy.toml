@@ -99,6 +99,9 @@ hook_add = '''
 	nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
 '''
 hook_source = '''
+	" Likewise, Files command with preview window
+	command! -bang -nargs=? -complete=dir Files
+\		call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 	command! FileMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 file',
 \		'dir': '~/.cache/neomru',
