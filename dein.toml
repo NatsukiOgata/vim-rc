@@ -115,6 +115,9 @@ repo = 'tpope/vim-fugitive'
 repo = 'cohama/agit.vim'
 
 [[plugins]]
+repo = 'editorconfig/editorconfig-vim'
+
+[[plugins]]
 repo = 'Shougo/vimproc.vim'
 
 [[plugins]]
