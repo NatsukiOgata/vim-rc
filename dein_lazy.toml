@@ -181,10 +181,12 @@ hook_source = '''
 '''
 hook_add = '''
 	" cscope_maps.vim like
-	" Show definetion of function cousor word on quickfix
+	" Show definetion of function cursor word on quickfix
 	nnoremap <C-\>s :<C-u>exe("Gtags ".expand('<cword>'))<CR>
-	" Show reference of cousor word on quickfix
+	" Show reference of cursor word on quickfix
 	nnoremap <C-\>c :<C-u>exe("Gtags -r ".expand('<cword>'))<CR>
+	" Show search on quickfix
+	nnoremap <C-\>e :<C-u>Gtags -g 
 '''
 
 [[plugins]]
