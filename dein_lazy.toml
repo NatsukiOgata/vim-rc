@@ -144,6 +144,10 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'cohama/agit.vim'
+on_cmd = ['Agit']
+
+[[plugins]]
 repo = 'haya14busa/vim-migemo'
 if   = '! has("nvim")'
 on_i = 1

@@ -99,9 +99,6 @@ repo = 'sheerun/vim-wombat-scheme'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
-repo = 'cohama/agit.vim'
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
