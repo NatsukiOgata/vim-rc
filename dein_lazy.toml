@@ -144,6 +144,10 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'jremmen/vim-ripgrep'
+on_cmd = ['Rg']
+
+[[plugins]]
 repo = 'gregsexton/gitv'
 on_cmd = ['Gitv']
 
