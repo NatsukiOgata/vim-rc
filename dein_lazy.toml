@@ -10,6 +10,13 @@ hook_add = '''
 	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
 	" カラースキーマ(プレビュー)
 	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
+	" Codic
+	nnoremap <silent> ,cd :<C-u>Unite codic<CR>
+'''
+hook_source = '''
+	" ESCキーを2回押すと終了する
+	autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
+	autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
 '''
 hook_post_source = '''
 	call unite#custom#profile('default', 'context', {
@@ -154,6 +161,14 @@ on_cmd = ['Gitv']
 [[plugins]]
 repo = 'cohama/agit.vim'
 on_cmd = ['Agit']
+
+[[plugins]]
+repo = 'koron/codic-vim'
+on_cmd = ['Codic']
+
+[[plugins]]
+repo = 'rhysd/unite-codic.vim'
+on_source = ['unite.vim']
 
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
