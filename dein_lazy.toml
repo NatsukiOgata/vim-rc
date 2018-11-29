@@ -14,9 +14,8 @@ hook_add = '''
 	nnoremap <silent> ,cd :<C-u>Unite codic<CR>
 '''
 hook_source = '''
-	" ESCキーを2回押すと終了する
-	autocmd FileType unite nnoremap <silent> <buffer> <ESC><ESC> q
-	autocmd FileType unite inoremap <silent> <buffer> <ESC><ESC> <ESC>q
+	" ESCキーで終了する
+	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
 '''
 hook_post_source = '''
 	call unite#custom#profile('default', 'context', {
@@ -141,7 +140,7 @@ hook_source = '''
 repo = 'easymotion/vim-easymotion'
 on_map = ['<Plug>(easymotion-']
 hook_add = '''
-	nmap s <Plug>(easymotion-s2)
+	map s <Plug>(easymotion-s2)
 '''
 hook_source = '''
 	" デフォルトのキーマッピングを無効に
