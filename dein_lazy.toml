@@ -11,7 +11,7 @@ hook_add = '''
 	" カラースキーマ(プレビュー)
 	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
 	" Codic
-	nnoremap <silent> ,cd :<C-u>Unite codic<CR>
+	nnoremap <silent> ,co :<C-u>Unite codic<CR>
 '''
 hook_source = '''
 	" ESCキーで終了する
