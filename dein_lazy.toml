@@ -103,6 +103,8 @@ hook_add = '''
 	nnoremap <silent> ,fm :<C-u>FileMRU<CR>
 	" 最近使用したディレクトリ一覧
 	nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
+	" スニペット
+	nnoremap <silent> ,sn :<C-u>Snippets<CR>
 '''
 hook_source = '''
 	command! FileMRU :call fzf#run(fzf#wrap({
@@ -122,12 +124,12 @@ repo = 'SirVer/ultisnips'
 depends = 'fzf.vim'
 on_path = '.*'
 hook_source = '''
-	let g:UltiSnipsExpandTrigger="<Tab>"
-	let g:UltiSnipsJumpForwardTrigger="<Tab>"
-	let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+	let g:UltiSnipsExpandTrigger       = "<Tab>"
+	let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
+	let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
-	"let g:UltiSnipsSnippetsDir=$HOME . '/.vim/UltiSnips'
-	let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/UltiSnips' ]
+	"let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
+	let g:UltiSnipsSnippetDirectories = [ $HOME . '/.vim/UltiSnips' ]
 '''
 
 [[plugins]]
