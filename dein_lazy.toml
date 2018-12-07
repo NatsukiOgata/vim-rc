@@ -93,9 +93,9 @@ merged = '0'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-on_cmd = ['Files', 'GFiles', 'FileMRU', 'DirectoryMRU']
+on_cmd = ['Files', 'GFiles', 'FileMRU', 'DirectoryMRU', 'Snippets']
 hook_add = '''
-	" ファイル一覧
+	" ファイル一覧(サブディレクトリも対象)
 	nnoremap <silent> ,fr :<C-u>Files<CR>
 	" ファイル一覧(Git)
 	nnoremap <silent> ,fg :<C-u>GFiles<CR>
@@ -116,6 +116,24 @@ hook_source = '''
 \		'down': '40%',
 \	})
 '''
+
+[[plugins]]
+repo = 'SirVer/ultisnips'
+depends = 'fzf.vim'
+on_path = '.*'
+hook_source = '''
+	let g:UltiSnipsExpandTrigger="<Tab>"
+	let g:UltiSnipsJumpForwardTrigger="<Tab>"
+	let g:UltiSnipsJumpBackwardTrigger="<S-Tab>"
+
+	"let g:UltiSnipsSnippetsDir=$HOME . '/.vim/UltiSnips'
+	let g:UltiSnipsSnippetDirectories=[ $HOME . '/.vim/UltiSnips' ]
+'''
+
+[[plugins]]
+repo = 'honza/vim-snippets'
+depends = 'ultisnips'
+on_path = '.*'
 
 [[plugins]]
 repo = 'tyru/eskk.vim'
