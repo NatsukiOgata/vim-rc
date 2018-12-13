@@ -13,33 +13,6 @@ repo = 'mattn/webapi-vim'
 repo = 'mattn/wwwrenderer-vim'
 
 [[plugins]]
-repo = 'thinca/vim-ref'
-hook_add = '''
-	let g:ref_source_webdict_cmd = '=wwwrenderer#render("%s")'
-	let g:ref_source_webdict_use_cache = 1
-
-	let g:ref_source_webdict_sites = {
-\		'je': {
-\			'url': 'http://dictionary.infoseek.ne.jp/jeword/%s',
-\		},
-\		'ej': {
-\			'url': 'http://dictionary.infoseek.ne.jp/ejword/%s',
-\		},
-\	}
-
-	function! g:ref_source_webdict_sites.je.filter(output)
-		return join(split(a:output, "\n")[25 :], "\n")
-	endfunction
-
-	function! g:ref_source_webdict_sites.ej.filter(output)
-		return join(split(a:output, "\n")[25 :], "\n")
-	endfunction
-
-	" 辞書(Webを使用)
-	nnoremap ,dw :<C-u>Ref webdict 
-'''
-
-[[plugins]]
 repo = 'Shougo/neomru.vim'
 hook_add = '''
 	let g:neomru#file_mru_limit = 1000000
