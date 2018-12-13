@@ -12,8 +12,6 @@ hook_add = '''
 	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
 	" Codic
 	nnoremap <silent> ,co :<C-u>Unite codic -direction=topleft<CR>
-'''
-hook_source = '''
 	" ESCキーで終了する
 	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
 '''
@@ -311,3 +309,4 @@ on_cmd = ['CopyFileName', 'CopyPath']
 [[plugins]]
 repo = 'vim-scripts/BlockDiff'
 on_cmd = ['BlockDiff1', 'BlockDiff2']
+
