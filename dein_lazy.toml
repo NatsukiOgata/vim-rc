@@ -145,9 +145,9 @@ hook_source = '''
 \		'encoding': 'utf-8',
 \	}
 	let g:eskk#large_dictionary = {
-\		'path': $ALLUSERSPROFILE . '/skk/skki1_5/SKK-JISYO.L',
+\		'path': 'C:/Windows/IME/SKK0/DICTS/skk-dict.txt',
 \		'sorted': 1,
-\		'encoding': 'euc-jp',
+\		'encoding': 'cp932',
 \	}
 	let g:eskk#marker_henkan = '^'
 	let g:eskk#marker_henkan_select = '^'
