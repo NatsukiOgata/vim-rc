@@ -76,6 +76,7 @@ repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
+build = 'make'
 
 [[plugins]]
 repo = 'rhysd/neovim-component'
