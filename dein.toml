@@ -81,3 +81,6 @@ build = 'make'
 [[plugins]]
 repo = 'rhysd/neovim-component'
 
+[[plugins]]
+repo = 'TopconTokyo/cpp-deprecated.vim'
+
