@@ -152,6 +152,24 @@ hook_source = '''
 	let g:eskk#marker_henkan = '^'
 	let g:eskk#marker_henkan_select = '^'
 	let g:eskk#egg_like_newline = 1
+
+	autocmd User eskk-initialize-pre call s:eskk_initial_pre()
+	function! s:eskk_initial_pre() abort
+		" ユーザはここで何か重たい初期化処理を実行することができる。
+		let t = eskk#table#new('rom_to_hira*', 'rom_to_hira')
+		call t.add_map('(', '（')
+		call t.add_map(')', '）')
+		call t.add_map('~', '～')
+		call t.add_map('zc', '©')
+		call t.add_map('zr', '®')
+		call t.add_map('tm', '™')
+		call t.add_map('z ', '　')
+		" "1." のように数字の後のドットはそのまま入力
+		for n in range(10)
+			call t.add_map(n . '.', n . '.')
+		endfor
+		call eskk#register_mode_table('hira', t)
+	endfunction
 '''
 
 [[plugins]]
