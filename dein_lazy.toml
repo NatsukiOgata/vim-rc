@@ -300,6 +300,10 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'dhruvasagar/vim-table-mode.git'
+on_cmd = ['TableModeToggle']
+
+[[plugins]]
 repo = 'kana/vim-altr'
 on_cmd = ['A']
 hook_source = '''
