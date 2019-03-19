@@ -297,6 +297,7 @@ depends = 'vim-operator-user'
 on_path = '.*'
 hook_source = '''
 	let g:clang_format#detect_style_file = 1
+"	let g:clang_format#command = 'clang-format-6.0'
 '''
 
 [[plugins]]
