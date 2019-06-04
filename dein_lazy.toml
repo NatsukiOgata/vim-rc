@@ -145,7 +145,7 @@ hook_source = '''
 \		'encoding': 'utf-8',
 \	}
 	let g:eskk#large_dictionary = {
-\		'path': 'C:/Windows/IME/SKK0/DICTS/skk-dict.txt',
+\		'path': '~/.vim/dict/skk-dict.txt',
 \		'sorted': 1,
 \		'encoding': 'cp932',
 \	}
@@ -276,8 +276,8 @@ hook_source = '''
 	" 保存時のみ実行する
 	let g:ale_lint_on_text_changed = 0
 	" 表示に関する設定
-	let g:ale_sign_error = '⛔'
-	let g:ale_sign_warning = '⚠'
+	let g:ale_sign_error = 'E'
+	let g:ale_sign_warning = 'W'
 	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 '''
 hook_post_source = '''
@@ -297,7 +297,7 @@ depends = 'vim-operator-user'
 on_path = '.*'
 hook_source = '''
 	let g:clang_format#detect_style_file = 1
-"	let g:clang_format#command = 'clang-format-6.0'
+	let g:clang_format#command = 'clang-format-6.0'
 '''
 
 [[plugins]]
