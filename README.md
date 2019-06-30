@@ -2,4 +2,4 @@
 
 cd ~/.vim
 
-git clone https://github.com/n-ogata/vim-rc.git rc
+git clone https://github.com/NatsukiOgata/vim-rc.git rc
