@@ -125,7 +125,13 @@ hook_source = '''
 \	}
 	let g:quickrun_config.cpp = {
 \		'command': 'g++',
-\		'cmdopt': '-std=c++11'
+\		'cmdopt' : '-std=c++11',
+\	}
+	let g:quickrun_config.cs  = {
+\		'command'              : 'mcs',
+\		'exec'                 : ['%c %o %s:p > /dev/null', 'mono %s:p:r.exe', 'rm %s:p:r.exe'],
+\		'cmdopt'               : '-warn:4',
+\		'quickfix/errorformat' : '%f\\(%l\\,%c\\):\ error\ CS%n:\ %m',
 \	}
 '''
 
