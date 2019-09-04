@@ -11,7 +11,7 @@ hook_add = '''
 	" カラースキーマ(プレビュー)
 	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
 	" Codic
-	nnoremap <silent> ,co :<C-u>Unite codic -direction=topleft<CR>
+	"nnoremap <silent> ,co :<C-u>Unite codic -direction=topleft<CR>
 	" ESCキーで終了する
 	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
 '''
@@ -216,13 +216,18 @@ on_cmd = ['Gitv']
 repo = 'cohama/agit.vim'
 on_cmd = ['Agit']
 
-[[plugins]]
-repo = 'koron/codic-vim'
-on_cmd = ['Codic']
+#[[plugins]]
+#repo = 'koron/codic-vim'
+#on_cmd = ['Codic']
+#
+#[[plugins]]
+#repo = 'rhysd/unite-codic.vim'
+#on_source = ['unite.vim']
 
+# https://github.com/okwrtdsh/vim-codic
 [[plugins]]
-repo = 'rhysd/unite-codic.vim'
-on_source = ['unite.vim']
+repo = 'okwrtdsh/vim-codic'
+on_cmd = ['Codic', 'CodicCamel']
 
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
