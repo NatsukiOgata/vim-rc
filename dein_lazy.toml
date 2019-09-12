@@ -148,6 +148,10 @@ repo = 'SirVer/ultisnips'
 depends = 'fzf.vim'
 on_path = '.*'
 hook_source = '''
+	let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+	let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+	let g:SuperTabDefaultCompletionType = '<C-n>'
+
 	let g:UltiSnipsExpandTrigger       = "<Tab>"
 	let g:UltiSnipsJumpForwardTrigger  = "<Tab>"
 	let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
