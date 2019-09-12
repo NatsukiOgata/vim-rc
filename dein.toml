@@ -83,5 +83,11 @@ build = 'make'
 repo = 'rhysd/neovim-component'
 
 [[plugins]]
+repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'yuttie/comfortable-motion.vim'
+
+[[plugins]]
 repo = 'TopconTokyo/cpp-deprecated.vim'
 
