@@ -131,7 +131,9 @@ hook_source = '''
 \	}
 	let g:quickrun_config.cpp = {
 \		'command': 'g++',
-\		'cmdopt' : '-std=c++11',
+\		'cmdopt' : '-std=c++14 -Wall',
+\		'input'  : '=@0',
+\		'runner' : 'system',
 \	}
 	let g:quickrun_config.cs  = {
 \		'command'              : 'mcs',
@@ -298,24 +300,34 @@ hook_add = '''
 #depends = 'neosnippet'
 #on_path = '.*'
 
+#[[plugins]]
+#repo = 'w0rp/ale'
+#on_path = '.*'
+#hook_source = '''
+#	" 保存時のみ実行する
+#	let g:ale_lint_on_text_changed = 0
+#	" 表示に関する設定
+#	let g:ale_sign_column_always = 1
+#	let g:ale_sign_error = 'E'
+#	let g:ale_sign_warning = 'W'
+#	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+#'''
+#hook_post_source = '''
+#	highlight link ALEErrorSign Tag
+#	highlight link ALEWarningSign StorageClass
+#	" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
+#	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+#	nmap <silent> <C-j> <Plug>(ale_next_wrap)
+#'''
+
 [[plugins]]
-repo = 'w0rp/ale'
+repo = 'Valloric/YouCompleteMe'
+merged = 0
 on_path = '.*'
 hook_source = '''
-	" 保存時のみ実行する
-	let g:ale_lint_on_text_changed = 0
-	" 表示に関する設定
-	let g:ale_sign_column_always = 1
-	let g:ale_sign_error = 'E'
-	let g:ale_sign_warning = 'W'
-	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-'''
-hook_post_source = '''
-	highlight link ALEErrorSign Tag
-	highlight link ALEWarningSign StorageClass
-	" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-	nmap <silent> <C-j> <Plug>(ale_next_wrap)
+	let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
+	let g:ycm_auto_trigger = 1
+	let g:ycm_autoclose_preview_window_after_insertion = 1
 '''
 
 [[plugins]]
