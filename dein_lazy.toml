@@ -333,6 +333,9 @@ hook_source = '''
 	let g:ycm_auto_trigger = 1
 	let g:ycm_autoclose_preview_window_after_insertion = 1
 '''
+hook_post_source = '''
+	let g:ycm_filetype_blacklist['gitcommit'] = 1
+'''
 
 [[plugins]]
 repo = 'kana/vim-operator-user'
