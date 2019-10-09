@@ -4,8 +4,6 @@ on_cmd = ['Unite']
 hook_add = '''
 	nnoremap [unite] :Unite
 	nmap ,u [unite]
-	" バッファ一覧
-	nnoremap <silent> ,bl :<C-u>Unite buffer<CR>
 	" bookmark
 	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
 	" カラースキーマ(プレビュー)
@@ -91,7 +89,7 @@ merged = '0'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-on_cmd = ['Files', 'GFiles', 'FileMRU', 'DirectoryMRU', 'Snippets']
+on_cmd = ['Files', 'GFiles', 'FileMRU', 'DirectoryMRU', 'Snippets', 'Buffers']
 hook_add = '''
 	" ファイル一覧(サブディレクトリも対象)
 	nnoremap <silent> ,fr :<C-u>Files<CR>
@@ -103,19 +101,22 @@ hook_add = '''
 	nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
 	" スニペット
 	nnoremap <silent> ,sn :<C-u>Snippets<CR>
+	" バッファ一覧
+	nnoremap <silent> ,bl :<C-u>Buffers<CR>
 '''
 hook_source = '''
+	let g:fzf_layout = { 'window': '-tabnew' }
 	command! FileMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 file',
 \		'dir': '~/.cache/neomru',
 \	}))
-	command! DirectoryMRU :call fzf#run({
+	command! DirectoryMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 directory',
-\		'sink': 'VimFilerTab',
+\		'sink': 'VimFiler',
 \		'dir': '~/.cache/neomru',
-\		'down': '40%',
-\	})
+\	}))
 '''
+
 [[plugins]]
 repo = 'thinca/vim-quickrun.git'
 on_path = '.*'
@@ -328,6 +329,11 @@ hook_add = '''
 repo = 'Valloric/YouCompleteMe'
 merged = 0
 on_path = '.*'
+hook_add = '''
+	"let g:ycm_rust_src_path = '/usr/local/rust/rustc-1.XX.0/src'
+	"let g:ycm_rust_src_path = '/usr/lib/rustlib/src/rust/src'
+	let g:ycm_rust_src_path = '/usr/src/rustc-1.36.0/src'
+'''
 hook_source = '''
 	let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
 	let g:ycm_auto_trigger = 1
