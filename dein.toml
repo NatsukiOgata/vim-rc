@@ -93,5 +93,11 @@ repo = 'yuttie/comfortable-motion.vim'
 repo = 'ervandew/supertab'
 
 #[[plugins]]
+#repo = 'neoclide/coc.nvim'
+##if = '''executable('node') && executable('yarn')'''
+#build = './install.sh nightly'
+#merged = '0'
+
+#[[plugins]]
 #repo = 'TopconTokyo/cpp-deprecated.vim'
 
