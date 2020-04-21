@@ -112,7 +112,7 @@ hook_source = '''
 \	}))
 	command! DirectoryMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 directory',
-\		'sink': 'VimFiler',
+\		'sink': 'VimFilerTab',
 \		'dir': '~/.cache/neomru',
 \	}))
 '''
@@ -374,7 +374,8 @@ hook_source = '''
 '''
 
 [[plugins]]
-repo = 'vim-scripts/DirDiff.vim'
+"repo = 'vim-scripts/DirDiff.vim'
+repo = 'will133/vim-dirdiff'
 on_cmd = ['DirDiff']
 hook_source = '''
 	" 行末のCRを取り除く
