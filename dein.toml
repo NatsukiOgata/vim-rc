@@ -88,6 +88,10 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
+# translateで必要
+[[plugins]]
+repo = 'skanehira/gtran'
+
 # ultisnips, YouCompleteMeで必要
 [[plugins]]
 repo = 'ervandew/supertab'

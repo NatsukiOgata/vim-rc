@@ -256,6 +256,11 @@ hook_post_source = '''
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
 '''
 
+[[plugins]]
+repo = 'skanehira/translate.vim'
+if   = '! has("nvim")'
+on_cmd = ['Translate', 'AutoTranslateModeEnable', 'AutoTranslateModeDisable', 'AutoTranslateModeToggle']
+
 #[[plugins]]
 #repo = 'Shougo/deoplete.nvim'
 #on_i = 1
