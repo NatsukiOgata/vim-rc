@@ -149,6 +149,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
+if   = 'has("nvim")'
 depends = 'fzf.vim'
 on_path = '.*'
 hook_source = '''
@@ -166,6 +167,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'honza/vim-snippets'
+if   = 'has("nvim")'
 depends = 'ultisnips'
 on_path = '.*'
 
