@@ -256,6 +256,11 @@ hook_post_source = '''
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
 '''
 
+# 無くてもOSC52でやり取りできている!?
+#[[plugins]]
+#repo = 'haya14busa/vim-poweryank'
+#on_cmd = ['PowerYankOSC52']
+
 [[plugins]]
 repo = 'skanehira/translate.vim'
 if   = '! has("nvim")'
