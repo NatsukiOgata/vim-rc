@@ -360,6 +360,13 @@ hook_add = '''
 #'''
 
 [[plugins]]
+repo = 'neoclide/coc.nvim'
+if   = 'has("nvim")'
+on_path = '.*'
+merged = '0'
+rev = 'release'
+
+[[plugins]]
 repo = 'kana/vim-operator-user'
 
 [[plugins]]

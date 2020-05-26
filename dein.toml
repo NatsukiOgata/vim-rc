@@ -97,10 +97,5 @@ repo = 'skanehira/gtran'
 repo = 'ervandew/supertab'
 
 [[plugins]]
-repo = 'neoclide/coc.nvim'
-merged = '0'
-rev = 'release'
-
-[[plugins]]
 repo = 'TopconTokyo/cpp-deprecated.vim'
 
