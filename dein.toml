@@ -8,6 +8,13 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'roxma/nvim-yarp'
+if   = '! has("nvim")'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if   = '! has("nvim")'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'mattn/wwwrenderer-vim'
@@ -95,6 +102,10 @@ repo = 'skanehira/gtran'
 # ultisnips, YouCompleteMeで必要
 [[plugins]]
 repo = 'ervandew/supertab'
+
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+#repo = 'Shougo/deorise.nvim'
 
 [[plugins]]
 repo = 'TopconTokyo/cpp-deprecated.vim'
