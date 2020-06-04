@@ -103,6 +103,13 @@ repo = 'skanehira/gtran'
 [[plugins]]
 repo = 'ervandew/supertab'
 
+#[[plugins]]
+#repo = 'glacambre/firenvim'
+#if   = '''! has('kaoriya')'''
+#hook_post_update = '''
+#    call firenvim#install(0)
+#'''
+
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
 #repo = 'Shougo/deorise.nvim'
