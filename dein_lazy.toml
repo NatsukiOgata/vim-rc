@@ -116,9 +116,6 @@ hook_add = '''
 	  \ defx#do_action('new_file')
 	  nnoremap <silent><buffer><expr> M
 	  \ defx#do_action('new_multiple_files')
-	  nnoremap <silent><buffer><expr> C
-	  \ defx#do_action('toggle_columns',
-	  \                'mark:indent:icon:filename:type:size:time')
 	  nnoremap <silent><buffer><expr> S
 	  \ defx#do_action('toggle_sort', 'time')
 	  nnoremap <silent><buffer><expr> d
@@ -159,8 +156,7 @@ hook_add = '''
 '''
 hook_post_source = '''
 	call defx#custom#option('_', {
-	  \ 'columns': 'indent:git:icons:filename:mark',
-	  \ 'show_ignored_files': 1,
+	  \ 'columns': 'mark:indent:git:icons:filename:time:size',
 	  \ })
 '''
 
