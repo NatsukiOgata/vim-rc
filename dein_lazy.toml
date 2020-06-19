@@ -481,6 +481,9 @@ hook_source = '''
 	" ヘッダファイルとソースファイルを切り替える
 	command! A call altr#forward()
 '''
+hook_post_source = '''
+	call altr#define('inc/%.h', 'src/%.cpp')
+'''
 
 [[plugins]]
 "repo = 'vim-scripts/DirDiff.vim'
