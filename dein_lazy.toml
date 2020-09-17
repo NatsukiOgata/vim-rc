@@ -61,14 +61,14 @@ hook_post_source = '''
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 on_cmd = ['VimFiler', 'VimFilerTab', 'VimFilerBufferDir', 'VimFilerCurrentDir']
-#hook_add = '''
-#	nnoremap [vimfiler] :VimFiler
-#	nmap ,f [vimfiler]
-#	" VimFiler(バッファディレクトリ)
-#	nnoremap <silent> [vimfiler]d :<C-u>VimFilerBufferDir<CR>
-#	" VimFiler(カレントディレクトリ)
-#	nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
-#'''
+hook_add = '''
+	nnoremap [vimfiler] :VimFiler
+	nmap ,f [vimfiler]
+	" VimFiler(バッファディレクトリ)
+	nnoremap <silent> [vimfiler]d :<C-u>VimFilerBufferDir<CR>
+	" VimFiler(カレントディレクトリ)
+	nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
+'''
 hook_source = '''
 	let g:vimfiler_as_default_explorer = 1
 '''
@@ -87,7 +87,7 @@ depends = ['vim-devicons', 'defx-icons', 'defx-git']
 on_cmd = ['Defx']
 hook_add = '''
 	nnoremap [defx] :Defx
-	nmap ,f [defx]
+"	nmap ,f [defx]
 	" Defx(ディレクトリ)
 	nnoremap <silent> [defx]d :<C-u>Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
 
