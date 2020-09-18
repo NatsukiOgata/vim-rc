@@ -194,6 +194,7 @@ hook_source = '''
 	let g:fzf_layout = { 'window': '-tabnew' }
 	command! FileMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 file',
+\		'sink': 'edit',
 \		'dir': '~/.cache/neomru',
 \	}))
 	command! DirectoryMRU :call fzf#run(fzf#wrap({
