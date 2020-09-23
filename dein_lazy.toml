@@ -169,6 +169,7 @@ repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
 repo = 'junegunn/fzf'
+rev = '8e027c445f0eb4495e300522843df335c3b54e60'
 build = './install --bin'
 merged = '0'
 
@@ -194,7 +195,6 @@ hook_source = '''
 	let g:fzf_layout = { 'window': '-tabnew' }
 	command! FileMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 file',
-\		'sink': 'edit',
 \		'dir': '~/.cache/neomru',
 \	}))
 	command! DirectoryMRU :call fzf#run(fzf#wrap({
