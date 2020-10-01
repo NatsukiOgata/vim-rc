@@ -8,6 +8,13 @@ hook_source = '''
 '''
 
 [[plugins]]
+repo = 'roxma/nvim-yarp'
+if   = '! has("nvim")'
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+if   = '! has("nvim")'
+
+[[plugins]]
 repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'mattn/wwwrenderer-vim'
@@ -26,7 +33,7 @@ hook_add = '''
 repo = 'airblade/vim-rooter'
 hook_add = '''
 	let g:rooter_targets = '*'
-	let g:rooter_use_lcd = 1
+	let g:rooter_cd_cmd = 'lcd'
 	let g:rooter_patterns = ['GTAGS', 'Makefile', '.git/', '.svn/', '.root/']
 '''
 
@@ -88,15 +95,24 @@ repo = 'jiangmiao/auto-pairs'
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
+# translateで必要
+[[plugins]]
+repo = 'skanehira/gtran'
+
 # ultisnips, YouCompleteMeで必要
 [[plugins]]
 repo = 'ervandew/supertab'
 
 #[[plugins]]
-#repo = 'neoclide/coc.nvim'
-##if = '''executable('node') && executable('yarn')'''
-#build = './install.sh nightly'
-#merged = '0'
+#repo = 'glacambre/firenvim'
+#if   = '''! has('kaoriya')'''
+#hook_post_update = '''
+#    call firenvim#install(0)
+#'''
+
+[[plugins]]
+repo = 'Shougo/vinarise.vim'
+#repo = 'Shougo/deorise.nvim'
 
 #[[plugins]]
 #repo = 'TopconTokyo/cpp-deprecated.vim'

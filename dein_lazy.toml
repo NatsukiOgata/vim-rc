@@ -82,7 +82,94 @@ hook_post_source = '''
 '''
 
 [[plugins]]
+repo = 'Shougo/defx.nvim'
+depends = ['vim-devicons', 'defx-icons', 'defx-git']
+on_cmd = ['Defx']
+hook_add = '''
+	nnoremap [defx] :Defx
+"	nmap ,f [defx]
+	" Defx(ディレクトリ)
+	nnoremap <silent> [defx]d :<C-u>Defx `expand('%:p:h')` -search=`expand('%:p')`<CR>
+
+	autocmd FileType defx call s:defx_my_settings()
+	function! s:defx_my_settings() abort
+	  " Define mappings
+	  nnoremap <silent><buffer><expr> <CR>
+	  \ defx#do_action('open')
+	  nnoremap <silent><buffer><expr> c
+	  \ defx#do_action('copy')
+	  nnoremap <silent><buffer><expr> m
+	  \ defx#do_action('move')
+	  nnoremap <silent><buffer><expr> p
+	  \ defx#do_action('paste')
+	  nnoremap <silent><buffer><expr> l
+	  \ defx#do_action('open')
+	  nnoremap <silent><buffer><expr> E
+	  \ defx#do_action('open', 'vsplit')
+	  nnoremap <silent><buffer><expr> P
+	  \ defx#do_action('open', 'pedit')
+	  nnoremap <silent><buffer><expr> o
+	  \ defx#do_action('open_tree', 'toggle')
+	  nnoremap <silent><buffer><expr> K
+	  \ defx#do_action('new_directory')
+	  nnoremap <silent><buffer><expr> N
+	  \ defx#do_action('new_file')
+	  nnoremap <silent><buffer><expr> M
+	  \ defx#do_action('new_multiple_files')
+	  nnoremap <silent><buffer><expr> S
+	  \ defx#do_action('toggle_sort', 'time')
+	  nnoremap <silent><buffer><expr> d
+	  \ defx#do_action('remove')
+	  nnoremap <silent><buffer><expr> r
+	  \ defx#do_action('rename')
+	  nnoremap <silent><buffer><expr> !
+	  \ defx#do_action('execute_command')
+	  nnoremap <silent><buffer><expr> x
+	  \ defx#do_action('execute_system')
+	  nnoremap <silent><buffer><expr> yy
+	  \ defx#do_action('yank_path')
+	  nnoremap <silent><buffer><expr> .
+	  \ defx#do_action('toggle_ignored_files')
+	  nnoremap <silent><buffer><expr> ;
+	  \ defx#do_action('repeat')
+	  nnoremap <silent><buffer><expr> h
+	  \ defx#do_action('cd', ['..'])
+	  nnoremap <silent><buffer><expr> ~
+	  \ defx#do_action('cd')
+	  nnoremap <silent><buffer><expr> q
+	  \ defx#do_action('quit')
+	  nnoremap <silent><buffer><expr> <Space>
+	  \ defx#do_action('toggle_select') . 'j'
+	  nnoremap <silent><buffer><expr> *
+	  \ defx#do_action('toggle_select_all')
+	  nnoremap <silent><buffer><expr> j
+	  \ line('.') == line('$') ? 'gg' : 'j'
+	  nnoremap <silent><buffer><expr> k
+	  \ line('.') == 1 ? 'G' : 'k'
+	  nnoremap <silent><buffer><expr> <C-l>
+	  \ defx#do_action('redraw')
+	  nnoremap <silent><buffer><expr> <C-g>
+	  \ defx#do_action('print')
+	  nnoremap <silent><buffer><expr> cd
+	  \ defx#do_action('change_vim_cwd')
+	endfunction
+'''
+hook_post_source = '''
+	call defx#custom#option('_', {
+	  \ 'columns': 'mark:indent:git:icons:filename:time:size',
+	  \ })
+'''
+
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+[[plugins]]
+repo = 'kristijanhusak/defx-icons'
+[[plugins]]
+repo = 'kristijanhusak/defx-git'
+
+[[plugins]]
 repo = 'junegunn/fzf'
+rev = '8e027c445f0eb4495e300522843df335c3b54e60'
 build = './install --bin'
 merged = '0'
 
@@ -112,7 +199,7 @@ hook_source = '''
 \	}))
 	command! DirectoryMRU :call fzf#run(fzf#wrap({
 \		'source': 'tail -n +2 directory',
-\		'sink': 'VimFiler',
+\		'sink': 'VimFilerTab',
 \		'dir': '~/.cache/neomru',
 \	}))
 '''
@@ -149,6 +236,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'SirVer/ultisnips'
+if   = 'has("nvim")'
 depends = 'fzf.vim'
 on_path = '.*'
 hook_source = '''
@@ -166,6 +254,7 @@ hook_source = '''
 
 [[plugins]]
 repo = 'honza/vim-snippets'
+if   = 'has("nvim")'
 depends = 'ultisnips'
 on_path = '.*'
 
@@ -227,6 +316,10 @@ repo = 'jremmen/vim-ripgrep'
 on_cmd = ['Rg']
 
 [[plugins]]
+repo = 'mhinz/vim-sayonara'
+on_cmd = ['Sayonara']
+
+[[plugins]]
 repo = 'gregsexton/gitv'
 on_cmd = ['Gitv']
 
@@ -255,6 +348,16 @@ hook_post_source = '''
 	set migemo
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
 '''
+
+# 無くてもOSC52でやり取りできている!?
+#[[plugins]]
+#repo = 'haya14busa/vim-poweryank'
+#on_cmd = ['PowerYankOSC52']
+
+[[plugins]]
+repo = 'skanehira/translate.vim'
+if   = '! has("nvim")'
+on_cmd = ['Translate', 'AutoTranslateModeEnable', 'AutoTranslateModeDisable', 'AutoTranslateModeToggle']
 
 #[[plugins]]
 #repo = 'Shougo/deoplete.nvim'
@@ -316,38 +419,45 @@ hook_add = '''
 #depends = 'neosnippet'
 #on_path = '.*'
 
+[[plugins]]
+repo = 'w0rp/ale'
+on_path = ['.js', '.php']
+hook_source = '''
+	" 保存時のみ実行する
+	let g:ale_lint_on_text_changed = 0
+	" 表示に関する設定
+	let g:ale_sign_column_always = 1
+	let g:ale_sign_error = 'E'
+	let g:ale_sign_warning = 'W'
+	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
+'''
+hook_post_source = '''
+	highlight link ALEErrorSign Tag
+	highlight link ALEWarningSign StorageClass
+	" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
+	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+	nmap <silent> <C-j> <Plug>(ale_next_wrap)
+'''
+
 #[[plugins]]
-#repo = 'w0rp/ale'
+#repo = 'Valloric/YouCompleteMe'
+#merged = 0
 #on_path = '.*'
 #hook_source = '''
-#	" 保存時のみ実行する
-#	let g:ale_lint_on_text_changed = 0
-#	" 表示に関する設定
-#	let g:ale_sign_column_always = 1
-#	let g:ale_sign_error = 'E'
-#	let g:ale_sign_warning = 'W'
-#	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
-#'''
-#hook_post_source = '''
-#	highlight link ALEErrorSign Tag
-#	highlight link ALEWarningSign StorageClass
-#	" Ctrl + kで次の指摘へ、Ctrl + jで前の指摘へ移動
-#	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-#	nmap <silent> <C-j> <Plug>(ale_next_wrap)
+#	let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
+#	let g:ycm_auto_trigger = 1
+#	let g:ycm_autoclose_preview_window_after_insertion = 1
+#	let g:ycm_always_populate_location_list = 1
+#	let g:ycm_key_list_stop_completion = ['<C-l>']
+#	let g:ycm_rust_src_path = '/usr/src/rustc-1.36.0/src'
 #'''
 
 [[plugins]]
-repo = 'Valloric/YouCompleteMe'
-merged = 0
+repo = 'neoclide/coc.nvim'
+if   = 'has("nvim")'
 on_path = '.*'
-hook_source = '''
-	let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
-	let g:ycm_auto_trigger = 1
-	let g:ycm_autoclose_preview_window_after_insertion = 1
-	let g:ycm_always_populate_location_list = 1
-	let g:ycm_key_list_stop_completion = ['<C-l>']
-	let g:ycm_rust_src_path = '/usr/src/rustc-1.36.0/src'
-'''
+merged = '0'
+rev = 'release'
 
 [[plugins]]
 repo = 'kana/vim-operator-user'
@@ -372,9 +482,13 @@ hook_source = '''
 	" ヘッダファイルとソースファイルを切り替える
 	command! A call altr#forward()
 '''
+hook_post_source = '''
+	call altr#define('inc/%.h', 'src/%.cpp')
+'''
 
 [[plugins]]
-repo = 'vim-scripts/DirDiff.vim'
+"repo = 'vim-scripts/DirDiff.vim'
+repo = 'will133/vim-dirdiff'
 on_cmd = ['DirDiff']
 hook_source = '''
 	" 行末のCRを取り除く
