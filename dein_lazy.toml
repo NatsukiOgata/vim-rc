@@ -340,14 +340,6 @@ on_cmd = ['Gitv']
 repo = 'cohama/agit.vim'
 on_cmd = ['Agit']
 
-#[[plugins]]
-#repo = 'koron/codic-vim'
-#on_cmd = ['Codic']
-#
-#[[plugins]]
-#repo = 'rhysd/unite-codic.vim'
-#on_source = ['unite.vim']
-
 # https://github.com/okwrtdsh/vim-codic
 [[plugins]]
 repo = 'okwrtdsh/vim-codic'
@@ -362,33 +354,10 @@ hook_post_source = '''
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
 '''
 
-# 無くてもOSC52でやり取りできている!?
-#[[plugins]]
-#repo = 'haya14busa/vim-poweryank'
-#on_cmd = ['PowerYankOSC52']
-
 [[plugins]]
 repo = 'skanehira/translate.vim'
 if   = '! has("nvim")'
 on_cmd = ['Translate', 'AutoTranslateModeEnable', 'AutoTranslateModeDisable', 'AutoTranslateModeToggle']
-
-#[[plugins]]
-#repo = 'Shougo/deoplete.nvim'
-#on_i = 1
-#hook_source = '''
-#	let g:deoplete#enable_at_startup = 1
-#'''
-
-#[[plugins]]
-#repo = 'hewes/unite-gtags'
-#on_path = '.*'
-#hook_source = '''
-#	" cscope_maps.vim like
-#	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>s :<C-u>Unite gtags/context -immediately<CR>
-#	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>g :<C-u>Unite gtags/def -immediately<CR>
-#	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>c :<C-u>Unite gtags/ref -auto-preview<CR>
-#	autocmd FileType h,c,cpp,php,javascript,css nnoremap <C-\>e :<C-u>Unite gtags/grep -auto-preview<CR>
-#'''
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
@@ -406,31 +375,6 @@ hook_add = '''
 	" Show search on quickfix
 	nnoremap <C-\>e :<C-u>Gtags -g 
 '''
-
-#[[plugins]]
-#repo = 'Shougo/neosnippet'
-#on_path = '.*'
-#hook_add = '''
-#	" Plugin key-mappings.
-#	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-#	imap <C-k> <Plug>(neosnippet_expand_or_jump)
-#	smap <C-k> <Plug>(neosnippet_expand_or_jump)
-#	xmap <C-k> <Plug>(neosnippet_expand_target)
-#
-#	" SuperTab like snippets behavior.
-#	" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-#	imap <expr><TAB>
-#\		pumvisible() ? "\<C-n>" :
-#\		neosnippet#expandable_or_jumpable() ?
-#\		"\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-#	smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-#\		"\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
-#'''
-#
-#[[plugins]]
-#repo = 'Shougo/neosnippet-snippets'
-#depends = 'neosnippet'
-#on_path = '.*'
 
 [[plugins]]
 repo = 'w0rp/ale'
@@ -451,19 +395,6 @@ hook_post_source = '''
 	nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 	nmap <silent> <C-j> <Plug>(ale_next_wrap)
 '''
-
-#[[plugins]]
-#repo = 'Valloric/YouCompleteMe'
-#merged = 0
-#on_path = '.*'
-#hook_source = '''
-#	let g:ycm_global_ycm_extra_conf = '~/.config/.ycm_extra_conf.py'
-#	let g:ycm_auto_trigger = 1
-#	let g:ycm_autoclose_preview_window_after_insertion = 1
-#	let g:ycm_always_populate_location_list = 1
-#	let g:ycm_key_list_stop_completion = ['<C-l>']
-#	let g:ycm_rust_src_path = '/usr/src/rustc-1.36.0/src'
-#'''
 
 [[plugins]]
 repo = 'neoclide/coc.nvim'
