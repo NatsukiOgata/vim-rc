@@ -88,6 +88,10 @@ repo = 'rhysd/neovim-component'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+hook_add = '''
+	" 同じ行のペアのみジャンプしたい
+	let g:AutoPairsMultilineClose = 0
+'''
 
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
