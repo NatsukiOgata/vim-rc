@@ -19,13 +19,6 @@ repo = 'mattn/webapi-vim'
 [[plugins]]
 repo = 'mattn/wwwrenderer-vim'
 
-#[[plugins]]
-#repo = 'Shougo/neomru.vim'
-#hook_add = '''
-#	let g:neomru#file_mru_limit = 1000000
-#	let g:neomru#directory_mru_limit = 1000000
-#'''
-
 [[plugins]]
 repo = 'airblade/vim-rooter'
 hook_add = '''
@@ -99,17 +92,6 @@ repo = 'yuttie/comfortable-motion.vim'
 # translateで必要
 [[plugins]]
 repo = 'skanehira/gtran'
-
-# ultisnips, YouCompleteMeで必要
-#[[plugins]]
-#repo = 'ervandew/supertab'
-
-#[[plugins]]
-#repo = 'glacambre/firenvim'
-#if   = '''! has('kaoriya')'''
-#hook_post_update = '''
-#    call firenvim#install(0)
-#'''
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
