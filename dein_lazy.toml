@@ -169,7 +169,6 @@ repo = 'kristijanhusak/defx-git'
 
 [[plugins]]
 repo = 'junegunn/fzf'
-#rev = '8e027c445f0eb4495e300522843df335c3b54e60'
 build = './install --bin'
 merged = '0'
 
@@ -183,9 +182,9 @@ hook_add = '''
 	" ファイル一覧(Git)
 	nnoremap <silent> ,fg :<C-u>GFiles<CR>
 	" 最近使用したファイル一覧
-	nnoremap <silent> ,fm :<C-u>FileMRU<CR>
+	"nnoremap <silent> ,fm :<C-u>FileMRU<CR>
 	" 最近使用したディレクトリ一覧
-	nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
+	"nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
 	" スニペット
 	nnoremap <silent> ,sn :<C-u>Snippets<CR>
 	" バッファ一覧
@@ -193,15 +192,27 @@ hook_add = '''
 '''
 hook_source = '''
 	let g:fzf_layout = { 'window': '-tabnew' }
-	command! FileMRU :call fzf#run(fzf#wrap({
-\		'source': 'tail -n +2 file',
-\		'dir': '~/.cache/neomru',
-\	}))
-	command! DirectoryMRU :call fzf#run(fzf#wrap({
-\		'source': 'tail -n +2 directory',
-\		'sink': 'VimFilerTab',
-\		'dir': '~/.cache/neomru',
-\	}))
+"	command! FileMRU :call fzf#run(fzf#wrap({
+"\		'source': 'tail -n +2 file',
+"\		'dir': '~/.cache/neomru',
+"\	}))
+"	command! DirectoryMRU :call fzf#run(fzf#wrap({
+"\		'source': 'tail -n +2 directory',
+"\		'sink': 'VimFilerTab',
+"\		'dir': '~/.cache/neomru',
+"\	}))
+'''
+
+[[plugins]]
+repo = 'pbogut/fzf-mru.vim'
+depends = 'fzf'
+on_cmd = ['FZFMru']
+hook_add = '''
+	" 最近使用したファイル一覧
+	nnoremap <silent> ,fm :<C-u>FZFMru<CR>
+'''
+hook_source = '''
+	let g:fzf_mru_relative = 0
 '''
 
 [[plugins]]
