@@ -90,8 +90,8 @@ hook_add = '''
 repo = 'yuttie/comfortable-motion.vim'
 
 # translateで必要
-[[plugins]]
-repo = 'skanehira/gtran'
+#[[plugins]]
+#repo = 'skanehira/gtran'
 
 [[plugins]]
 repo = 'Shougo/vinarise.vim'

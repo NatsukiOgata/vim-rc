@@ -347,10 +347,10 @@ hook_post_source = '''
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
 '''
 
-[[plugins]]
-repo = 'skanehira/translate.vim'
-if   = '! has("nvim")'
-on_cmd = ['Translate', 'AutoTranslateModeEnable', 'AutoTranslateModeDisable', 'AutoTranslateModeToggle']
+#[[plugins]]
+#repo = 'skanehira/translate.vim'
+#if   = '! has("nvim")'
+#on_cmd = ['Translate', 'AutoTranslateModeEnable', 'AutoTranslateModeDisable', 'AutoTranslateModeToggle']
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
@@ -395,6 +395,12 @@ if   = 'has("nvim")'
 on_path = '.*'
 merged = '0'
 rev = 'release'
+hook_post_source = '''
+	" coc-translator
+	nnoremap [translator] :CocCommand translator.
+	nmap ,t [translator]
+	nnoremap <silent> [translator]j :<C-u>CocCommand translator.echo<CR>
+'''
 
 [[plugins]]
 repo = 'kana/vim-operator-user'
