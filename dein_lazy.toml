@@ -61,14 +61,14 @@ hook_post_source = '''
 [[plugins]]
 repo = 'Shougo/vimfiler.vim'
 on_cmd = ['VimFiler', 'VimFilerTab', 'VimFilerBufferDir', 'VimFilerCurrentDir']
-#hook_add = '''
-#	nnoremap [vimfiler] :VimFiler
-#	nmap ,f [vimfiler]
-#	" VimFiler(バッファディレクトリ)
-#	nnoremap <silent> [vimfiler]d :<C-u>VimFilerBufferDir<CR>
-#	" VimFiler(カレントディレクトリ)
-#	nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
-#'''
+hook_add = '''
+	nnoremap [vimfiler] :VimFiler
+	nmap ,f [vimfiler]
+	" VimFiler(バッファディレクトリ)
+	nnoremap <silent> [vimfiler]d :<C-u>VimFilerBufferDir<CR>
+	" VimFiler(カレントディレクトリ)
+	nnoremap <silent> [vimfiler]c :<C-u>VimFilerCurrentDir<CR>
+'''
 hook_source = '''
 	let g:vimfiler_as_default_explorer = 1
 '''
@@ -170,14 +170,21 @@ repo = 'kristijanhusak/defx-git'
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 on_cmd = ['Fern']
-hook_add = '''
-	nnoremap [fern] :Fern
-	nmap ,f [fern]
-	" バッファディレクトリ
-	nnoremap <silent> [fern]d :<C-u>Fern %:h<CR>
-	" カレントディレクトリ
-	nnoremap <silent> [fern]c :<C-u>Fern .<CR>
+#hook_add = '''
+#	nnoremap [fern] :Fern
+#	nmap ,f [fern]
+#	" バッファディレクトリ
+#	nnoremap <silent> [fern]d :<C-u>Fern %:h<CR>
+#	" カレントディレクトリ
+#	nnoremap <silent> [fern]c :<C-u>Fern .<CR>
+#'''
+hook_post_source = '''
+	nmap <buffer> <Plug>(fern-action-dirdiff) <Plug>(fern-action-ex=)DirDiff<CR>
 '''
+
+[[plugins]]
+repo = 'lambdalisue/fern-bookmark.vim'
+depends = 'fern'
 
 [[plugins]]
 repo = 'antoinemadec/FixCursorHold.nvim'
