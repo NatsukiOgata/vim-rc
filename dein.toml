@@ -70,6 +70,12 @@ repo = 'sheerun/vim-wombat-scheme'
 repo = 'tpope/vim-fugitive'
 
 [[plugins]]
+repo = 'skanehira/gh.vim'
+hook_add = '''
+	let g:gh_token = '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'
+'''
+
+[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]
