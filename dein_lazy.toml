@@ -281,11 +281,11 @@ hook_source = '''
 	let g:asyncrun_bell = 1
 '''
 
-[[plugins]]
-repo = 'honza/vim-snippets'
-if   = 'has("nvim")'
-depends = 'ultisnips'
-on_path = '.*'
+#[[plugins]]
+#repo = 'honza/vim-snippets'
+#if   = 'has("nvim")'
+#depends = 'ultisnips'
+#on_path = '.*'
 
 [[plugins]]
 repo = 'tyru/eskk.vim'
