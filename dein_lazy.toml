@@ -288,8 +288,8 @@ hook_source = '''
 #on_path = '.*'
 
 [[plugins]]
-repo = 'tyru/eskk.vim'
 on_i = 1
+repo = 'vim-skk/eskk.vim'
 hook_source = '''
 	let g:eskk#dictionary = {
 \		'path': '~/.vim/dict/SKK-VIM-JISYO.txt',
