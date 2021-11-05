@@ -288,8 +288,8 @@ hook_source = '''
 #on_path = '.*'
 
 [[plugins]]
-on_i = 1
 repo = 'vim-skk/eskk.vim'
+on_event = 'InsertEnter'
 hook_source = '''
 	let g:eskk#dictionary = {
 \		'path': '~/.vim/dict/SKK-VIM-JISYO.txt',
@@ -373,7 +373,7 @@ on_cmd = ['Codic', 'CodicCamel']
 [[plugins]]
 repo = 'haya14busa/vim-migemo'
 if   = '! has("nvim")'
-on_i = 1
+on_event = 'InsertEnter'
 hook_post_source = '''
 	set migemo
 	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
