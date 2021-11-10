@@ -349,7 +349,7 @@ repo = 'mhinz/vim-sayonara'
 on_cmd = ['Sayonara']
 
 [[plugins]]
-repo = 'gregsexton/gitv'
+repo = 'buggo/gitv'
 on_cmd = ['Gitv']
 
 [[plugins]]
