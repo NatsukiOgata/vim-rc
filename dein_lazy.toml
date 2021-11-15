@@ -367,15 +367,6 @@ on_cmd = ['Gitv']
 repo = 'cohama/agit.vim'
 on_cmd = ['Agit']
 
-[[plugins]]
-repo = 'rhysd/ghpr-blame.vim'
-on_cmd = ['GHPRBlame']
-hook_source = '''
-	let g:ghpr_github_auth_token = {
-\		'github.com' : '',
-\	}
-'''
-
 # https://github.com/okwrtdsh/vim-codic
 [[plugins]]
 repo = 'okwrtdsh/vim-codic'
