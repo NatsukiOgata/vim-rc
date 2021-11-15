@@ -92,16 +92,8 @@ hook_add = '''
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
-# translateで必要
-#[[plugins]]
-#repo = 'skanehira/gtran'
-
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
-#repo = 'Shougo/deorise.nvim'
-
-#[[plugins]]
-#repo = 'github/copilot.vim'
 
 [[plugins]]
 repo = 'TopconTokyo/cpp-deprecated.vim'
