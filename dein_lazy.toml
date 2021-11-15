@@ -372,7 +372,7 @@ repo = 'rhysd/ghpr-blame.vim'
 on_cmd = ['GHPRBlame']
 hook_source = '''
 	let g:ghpr_github_auth_token = {
-\		'github.com' : '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',
+\		'github.com' : '',
 \	}
 '''
 
