@@ -49,6 +49,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
 repo = 'ujihisa/unite-colorscheme'
 
 [[plugins]]
