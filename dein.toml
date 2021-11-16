@@ -49,6 +49,9 @@ hook_add = '''
 '''
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+
+[[plugins]]
 repo = 'ujihisa/unite-colorscheme'
 
 [[plugins]]
@@ -89,13 +92,8 @@ hook_add = '''
 [[plugins]]
 repo = 'yuttie/comfortable-motion.vim'
 
-# translateで必要
-[[plugins]]
-repo = 'skanehira/gtran'
-
 [[plugins]]
 repo = 'Shougo/vinarise.vim'
-#repo = 'Shougo/deorise.nvim'
 
 #[[plugins]]
 #repo = 'TopconTokyo/cpp-deprecated.vim'
