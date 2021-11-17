@@ -2,12 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'thinca/vim-singleton'
-hook_source = '''
-	call singleton#enable()
-'''
-
-[[plugins]]
 repo = 'roxma/nvim-yarp'
 if   = '! has("nvim")'
 [[plugins]]
