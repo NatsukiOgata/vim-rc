@@ -64,9 +64,6 @@ repo = 'vim-airline/vim-airline-themes'
 repo = 'sheerun/vim-wombat-scheme'
 
 [[plugins]]
-repo = 'tpope/vim-fugitive'
-
-[[plugins]]
 repo = 'editorconfig/editorconfig-vim'
 
 [[plugins]]

@@ -231,6 +231,10 @@ repo = 'mhinz/vim-sayonara'
 on_cmd = ['Sayonara']
 
 [[plugins]]
+repo = 'tpope/vim-fugitive'
+on_path = '.*'
+
+[[plugins]]
 repo = 'buggo/gitv'
 on_cmd = ['Gitv']
 
