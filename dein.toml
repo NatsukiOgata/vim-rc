@@ -2,12 +2,6 @@
 repo = 'Shougo/dein.vim'
 
 [[plugins]]
-repo = 'thinca/vim-singleton'
-hook_source = '''
-	call singleton#enable()
-'''
-
-[[plugins]]
 repo = 'roxma/nvim-yarp'
 if   = '! has("nvim")'
 [[plugins]]
@@ -58,19 +52,33 @@ repo = 'ujihisa/unite-colorscheme'
 repo = 'itchyny/landscape.vim'
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
 hook_add = '''
-	let g:airline_powerline_fonts = 1
+	set laststatus=2
+	let g:lightline = {
+\		'colorscheme': 'wombat',
+\		'active': {
+\			'left': [
+\				[ 'mode', 'paste' ],
+\				[ 'gitbranch', 'readonly', 'filename', 'modified' ],
+\			],
+\		},
+\		'component_function': {
+\			'gitbranch': 'FugitiveHead',
+\		},
+\		'separator': {
+\			'left': "\ue0b4",
+\			'right': "\ue0b6",
+\		},
+\		'subseparator': {
+\			'left': "\ue0b5",
+\			'right': "\ue0b7",
+\		},
+\	}
 '''
 
 [[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-
-[[plugins]]
 repo = 'sheerun/vim-wombat-scheme'
-
-[[plugins]]
-repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'editorconfig/editorconfig-vim'

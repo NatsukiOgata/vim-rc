@@ -8,8 +8,6 @@ hook_add = '''
 	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
 	" カラースキーマ(プレビュー)
 	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
-	" Codic
-	"nnoremap <silent> ,co :<C-u>Unite codic -direction=topleft<CR>
 	" ESCキーで終了する
 	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
 '''
@@ -58,25 +56,25 @@ on_cmd = ['Fern']
 hook_post_source = '''
 	nmap <buffer> <Plug>(fern-action-dirdiff) <Plug>(fern-action-ex=)DirDiff<CR>
 '''
+
+[[plugins]]
+repo = 'lambdalisue/nerdfont.vim'
+on_source = 'fern.vim'
 hook_source = '''
 	let g:fern#renderer = 'nerdfont'
 '''
 
 [[plugins]]
-repo = 'lambdalisue/nerdfont.vim'
-depends = 'fern'
-
-[[plugins]]
 repo = 'lambdalisue/fern-renderer-nerdfont.vim'
-depends = 'fern'
+on_source = 'fern.vim'
 
 [[plugins]]
 repo = 'lambdalisue/fern-bookmark.vim'
-depends = 'fern'
+on_source = 'fern.vim'
 
 [[plugins]]
 repo = 'antoinemadec/FixCursorHold.nvim'
-depends = 'fern'
+on_source = 'fern.vim'
 
 [[plugins]]
 repo = 'junegunn/fzf'
@@ -92,10 +90,6 @@ hook_add = '''
 	nnoremap <silent> ,fr :<C-u>Files<CR>
 	" ファイル一覧(Git)
 	nnoremap <silent> ,fg :<C-u>GFiles<CR>
-	" 最近使用したファイル一覧
-	"nnoremap <silent> ,fm :<C-u>FileMRU<CR>
-	" 最近使用したディレクトリ一覧
-	"nnoremap <silent> ,dm :<C-u>DirectoryMRU<CR>
 	" スニペット
 	nnoremap <silent> ,sn :<C-u>Snippets<CR>
 	" バッファ一覧
@@ -103,15 +97,6 @@ hook_add = '''
 '''
 hook_source = '''
 	let g:fzf_layout = { 'window': '-tabnew' }
-"	command! FileMRU :call fzf#run(fzf#wrap({
-"\		'source': 'tail -n +2 file',
-"\		'dir': '~/.cache/neomru',
-"\	}))
-"	command! DirectoryMRU :call fzf#run(fzf#wrap({
-"\		'source': 'tail -n +2 directory',
-"\		'sink': 'VimFilerTab',
-"\		'dir': '~/.cache/neomru',
-"\	}))
 '''
 
 [[plugins]]
@@ -229,6 +214,10 @@ on_cmd = ['Rg']
 [[plugins]]
 repo = 'mhinz/vim-sayonara'
 on_cmd = ['Sayonara']
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+on_path = '.*'
 
 [[plugins]]
 repo = 'buggo/gitv'
