@@ -66,6 +66,14 @@ hook_add = '''
 \		'component_function': {
 \			'gitbranch': 'FugitiveHead',
 \		},
+\		'separator': {
+\			'left': "\ue0b4",
+\			'right': "\ue0b6",
+\		},
+\		'subseparator': {
+\			'left': "\ue0b5",
+\			'right': "\ue0b7",
+\		},
 \	}
 '''
 
