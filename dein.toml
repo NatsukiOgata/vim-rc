@@ -52,13 +52,22 @@ repo = 'ujihisa/unite-colorscheme'
 repo = 'itchyny/landscape.vim'
 
 [[plugins]]
-repo = 'vim-airline/vim-airline'
+repo = 'itchyny/lightline.vim'
 hook_add = '''
-	let g:airline_powerline_fonts = 1
+	set laststatus=2
+	let g:lightline = {
+\		'colorscheme': 'wombat',
+\		'active': {
+\			'left': [
+\				[ 'mode', 'paste' ],
+\				[ 'gitbranch', 'readonly', 'filename', 'modified' ],
+\			],
+\		},
+\		'component_function': {
+\			'gitbranch': 'FugitiveHead',
+\		},
+\	}
 '''
-
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
 
 [[plugins]]
 repo = 'sheerun/vim-wombat-scheme'
