@@ -53,9 +53,6 @@ on_cmd = ['Fern']
 #	" カレントディレクトリ
 #	nnoremap <silent> [fern]c :<C-u>Fern .<CR>
 #'''
-hook_post_source = '''
-	nmap <buffer> <Plug>(fern-action-dirdiff) <Plug>(fern-action-ex=)DirDiff<CR>
-'''
 
 [[plugins]]
 repo = 'lambdalisue/nerdfont.vim'
@@ -84,7 +81,7 @@ merged = '0'
 [[plugins]]
 repo = 'junegunn/fzf.vim'
 depends = 'fzf'
-on_cmd = ['Files', 'GFiles', 'FileMRU', 'DirectoryMRU', 'Snippets', 'Buffers']
+on_cmd = ['Files', 'GFiles', 'Snippets', 'Buffers']
 hook_add = '''
 	" ファイル一覧(サブディレクトリも対象)
 	nnoremap <silent> ,fr :<C-u>Files<CR>
