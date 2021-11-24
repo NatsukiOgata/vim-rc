@@ -291,7 +291,7 @@ hook_post_source = '''
 	" coc-translator
 	nnoremap [translator] :CocCommand translator.
 	nmap ,t [translator]
-	nnoremap <silent> [translator]j :<C-u>CocCommand translator.echo<CR>
+	nnoremap <silent> [translator]j :<C-u>CocCommand translator.popup<CR>
 '''
 
 [[plugins]]
