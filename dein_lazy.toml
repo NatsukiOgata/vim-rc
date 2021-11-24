@@ -232,14 +232,17 @@ on_cmd = ['Agit']
 repo = 'okwrtdsh/vim-codic'
 on_cmd = ['Codic', 'CodicCamel']
 
-[[plugins]]
-repo = 'haya14busa/vim-migemo'
-if   = '! has("nvim")'
-on_event = 'InsertEnter'
-hook_post_source = '''
-	set migemo
-	set migemodict=C:\bin\cmigemo\dict\utf-8\migemo-dict
-'''
+#[[plugins]]
+#repo = 'rhysd/migemo-search.vim'
+#on_path = '.*'
+#hook_source = '''
+#	let g:migemosearch_cmigemo = 'D:\bin\cmigemo\cmigemo.exe'
+#	let g:migemosearch_migemodict = 'D:\bin\cmigemo\dict\cp932\migemo-dict'
+#	let g:migemosearch_use_kaoriya_migemo = 1
+#'''
+#hook_add = '''
+#	set incsearch
+#'''
 
 [[plugins]]
 repo = 'vim-scripts/gtags.vim'
