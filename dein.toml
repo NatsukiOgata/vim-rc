@@ -8,10 +8,10 @@ if   = '! has("nvim")'
 repo = 'roxma/vim-hug-neovim-rpc'
 if   = '! has("nvim")'
 
-[[plugins]]
-repo = 'mattn/webapi-vim'
-[[plugins]]
-repo = 'mattn/wwwrenderer-vim'
+#[[plugins]]
+#repo = 'mattn/webapi-vim'
+#[[plugins]]
+#repo = 'mattn/wwwrenderer-vim'
 
 [[plugins]]
 repo = 'airblade/vim-rooter'
