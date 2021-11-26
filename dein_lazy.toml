@@ -266,8 +266,8 @@ hook_source = '''
 	let g:ale_lint_on_text_changed = 0
 	" 表示に関する設定
 	let g:ale_sign_column_always = 1
-	let g:ale_sign_error = 'E'
-	let g:ale_sign_warning = 'W'
+	let g:ale_sign_error = "\uf06a"
+	let g:ale_sign_warning = "\uf071"
 	let g:ale_echo_msg_format = '[%linter%]%code: %%s'
 '''
 hook_post_source = '''
