@@ -161,12 +161,12 @@ hook_source = '''
 \		'encoding': 'utf-8',
 \	}
 	let g:eskk#large_dictionary = {
-\		'path': '~/.vim/dict/skk-dict.txt',
+\		'path': '~/.vim/dict/SKK-JISYO.L',
 \		'sorted': 1,
-\		'encoding': 'cp932',
+\		'encoding': 'euc-jp',
 \	}
-	let g:eskk#marker_henkan = '^'
-	let g:eskk#marker_henkan_select = '^'
+"	let g:eskk#marker_henkan = '^'
+"	let g:eskk#marker_henkan_select = '^'
 	let g:eskk#egg_like_newline = 1
 
 	autocmd User eskk-initialize-pre call s:eskk_initial_pre()
