@@ -324,7 +324,7 @@ repo = 'will133/vim-dirdiff'
 on_cmd = ['DirDiff']
 hook_source = '''
 	" 行末のCRを取り除く
-	let g:DirDiffAddArgs = "--strip-trailing-cr"
+"	let g:DirDiffAddArgs = "--strip-trailing-cr"
 	" 除外するもの
 	let g:DirDiffExcludes = "bin,*.o,a.out"
 '''
