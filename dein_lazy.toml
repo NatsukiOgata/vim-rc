@@ -49,7 +49,7 @@ hook_add = '''
 	nnoremap [fern] :Fern
 	nmap ,f [fern]
 	" バッファディレクトリ
-	nnoremap <silent> [fern]d :<C-u>Fern %:h<CR>
+	nnoremap <silent> [fern]d :<C-u>Fern . -reveal=%<CR>
 	" カレントディレクトリ
 	nnoremap <silent> [fern]c :<C-u>Fern .<CR>
 '''
