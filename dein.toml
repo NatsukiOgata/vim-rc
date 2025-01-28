@@ -18,7 +18,7 @@ repo = 'airblade/vim-rooter'
 hook_add = '''
 	let g:rooter_targets = '*'
 	let g:rooter_cd_cmd = 'lcd'
-	let g:rooter_patterns = ['GTAGS', 'Makefile', '.git/', '.svn/', '.root/']
+	let g:rooter_patterns = ['GTAGS', 'Makefile', '.gitignore', '.vscode/', '.git/', '.svn/', '.root/']
 '''
 
 [[plugins]]
