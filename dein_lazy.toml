@@ -1,16 +1,16 @@
 [[plugins]]
 repo = 'Shougo/unite.vim'
 on_cmd = ['Unite']
-hook_add = '''
-	nnoremap [unite] :Unite
-	nmap ,u [unite]
-	" bookmark
-	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
-	" カラースキーマ(プレビュー)
-	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
-	" ESCキーで終了する
-	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
-'''
+#hook_add = '''
+#	nnoremap [unite] :Unite
+#	nmap ,u [unite]
+#	" bookmark
+#	nnoremap <silent> ,bj :<C-u>Unite bookmark<CR>
+#	" カラースキーマ(プレビュー)
+#	nnoremap <silent> ,cs :<C-u>Unite colorscheme -auto-preview<CR>
+#	" ESCキーで終了する
+#	autocmd FileType unite nmap <buffer> <ESC> <Plug>(unite_exit)
+#'''
 hook_post_source = '''
 	call unite#custom#profile('default', 'context', {
 \		'start_insert': 1,
@@ -68,6 +68,10 @@ on_source = 'fern.vim'
 [[plugins]]
 repo = 'lambdalisue/fern-bookmark.vim'
 on_source = 'fern.vim'
+hook_add = '''
+	" bookmark
+	nnoremap <silent> ,bj :<C-u>Fern bookmark:///<CR>
+'''
 
 [[plugins]]
 repo = 'antoinemadec/FixCursorHold.nvim'
