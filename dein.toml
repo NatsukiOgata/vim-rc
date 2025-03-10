@@ -65,6 +65,8 @@ hook_add = '''
 \		},
 \		'component_function': {
 \			'gitbranch': 'FugitiveHead',
+\			'absolutedir': 'ShowAbsoluteDir',
+\			'relativedir': 'ShowRelativeDir',
 \		},
 \		'separator': {
 \			'left': "\ue0b4",
@@ -75,6 +77,14 @@ hook_add = '''
 \			'right': "\ue0b7",
 \		},
 \	}
+	function! ShowAbsoluteDir()
+		let l:dir = expand('%:p:h')
+		return '' != l:dir ? l:dir : '[Empty Dir]'
+	endfunction
+	function! ShowRelativeDir()
+		let l:dir = expand('%:h')
+		return '' != l:dir ? l:dir : '[Empty Dir]'
+	endfunction
 '''
 
 [[plugins]]
