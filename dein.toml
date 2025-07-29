@@ -49,9 +49,6 @@ repo = 'ryanoasis/vim-devicons'
 repo = 'ujihisa/unite-colorscheme'
 
 [[plugins]]
-repo = 'itchyny/landscape.vim'
-
-[[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 	set laststatus=2
