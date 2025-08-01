@@ -326,15 +326,8 @@ hook_post_source = '''
 '''
 
 [[plugins]]
-"repo = 'vim-scripts/DirDiff.vim'
-repo = 'will133/vim-dirdiff'
-on_cmd = ['DirDiff']
-hook_source = '''
-	" 行末のCRを取り除く
-"	let g:DirDiffAddArgs = "--strip-trailing-cr"
-	" 除外するもの
-	let g:DirDiffExcludes = "bin,*.o,a.out"
-'''
+repo = 'cossonleo/dirdiff.nvim'
+on_cmd = ['DDiff', 'DDiffRec']
 
 [[plugins]]
 repo = 'vim-scripts/copypath.vim'
