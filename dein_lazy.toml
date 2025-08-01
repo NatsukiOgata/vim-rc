@@ -209,8 +209,11 @@ hook_add = '''
 '''
 
 [[plugins]]
-repo = 'jremmen/vim-ripgrep'
+repo = 'kyoh86/vim-ripgrep'
 on_cmd = ['Rg']
+hook_source = '''
+	command! -nargs=+ -complete=file Rg :call ripgrep#search(<q-args>)
+'''
 
 [[plugins]]
 repo = 'mhinz/vim-sayonara'
